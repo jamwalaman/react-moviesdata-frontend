@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
 import axios from 'axios';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import MovieCard from './MovieCard';
 
 function ShowMovieList() {
@@ -25,9 +25,14 @@ function ShowMovieList() {
 
   return (
     <div className='ShowMovieList'>
+
       <div className='container'>
-        <div className='list'>{movieList}</div>
+        <div className='row'>
+          <Link to='/create-movie' className='btn'>Add movie</Link>
+          <div className='list'>{movieList}</div>
+        </div>
       </div>
+
     </div>
   );
 }
