@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 function UpdateMovieInfo(props) {
   const [movie, setMovie] = useState({
@@ -59,6 +60,11 @@ function UpdateMovieInfo(props) {
 
   return (
     <div className='UpdateMovieInfo'>
+      <HelmetProvider>
+      <Helmet>
+        <title>{ `Edit - ${movie.title}` } | {window.$sitename}</title>
+      </Helmet>
+      </HelmetProvider>
       <div className='container'>
         <div className='row'>
           <div className='col-md-8 m-auto'>
@@ -119,6 +125,7 @@ function UpdateMovieInfo(props) {
               <input
                 type='date'
                 name='release_date'
+                placeholder="yyyy-mm-dd"
                 className='form-control'
                 value={movie.release_date}
                 onChange={onChange}

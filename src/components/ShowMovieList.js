@@ -3,8 +3,10 @@ import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import MovieCard from './MovieCard';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 function ShowMovieList() {
+
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -25,7 +27,11 @@ function ShowMovieList() {
 
   return (
     <div className='ShowMovieList'>
-
+      <HelmetProvider>
+      <Helmet>
+        <title>Home | {window.$sitename}</title>
+      </Helmet>
+      </HelmetProvider>
       <div className='container'>
         <div className='row'>
           <Link to='/create-movie' className='btn'>Add movie</Link>
@@ -35,6 +41,7 @@ function ShowMovieList() {
 
     </div>
   );
+
 }
 
 export default ShowMovieList;

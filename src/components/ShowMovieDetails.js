@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 function ShowMovieDetails(props) {
   const [movie, setMovie] = useState({});
@@ -31,6 +32,8 @@ function ShowMovieDetails(props) {
       });
   };
 
+  const moviedate = new Date(movie.release_date);
+
   const MovieItem = (
     <div>
       <table className='table table-hover table-dark'>
@@ -53,7 +56,7 @@ function ShowMovieDetails(props) {
           <tr>
             <th scope='row'>4</th>
             <td>Release Date</td>
-            <td>{movie.release_date}</td>
+            <td>{moviedate.getFullYear()}/{moviedate.getMonth()+1}/{moviedate.getDate()}</td>
           </tr>
           <tr>
             <th scope='row'>5</th>
@@ -67,6 +70,11 @@ function ShowMovieDetails(props) {
 
   return (
     <div className='ShowMovieDetails'>
+      <HelmetProvider>
+      <Helmet>
+        <title>{ `${movie.title}` } | {window.$sitename}</title>
+      </Helmet>
+      </HelmetProvider>
       <div className='container'>
         <div className='row'>
           <div className='col-md-10 m-auto'>
