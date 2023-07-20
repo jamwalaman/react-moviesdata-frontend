@@ -1,10 +1,12 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
+import './main.scss';
 
 import CreateMovie from './components/CreateMovie';
 import ShowMovieList from './components/ShowMovieList';
 import ShowMovieDetails from './components/ShowMovieDetails';
 import UpdateMovieInfo from './components/UpdateMovieInfo';
+
+window.$sitename = "Movies Data";
 
 const App = () => {
   return (
