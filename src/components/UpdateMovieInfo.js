@@ -3,11 +3,13 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
+const { DateTime } = require("luxon"); //for date handling
+
 function UpdateMovieInfo(props) {
   const [movie, setMovie] = useState({
     title: '',
     director: '',
-    description: '',
+    synopsis: '',
     release_date: '',
     production: '',
   });
@@ -22,7 +24,7 @@ function UpdateMovieInfo(props) {
         setMovie({
           title: res.data.title,
           director: res.data.director,
-          description: res.data.description,
+          synopsis: res.data.synopsis,
           release_date: res.data.release_date,
           production: res.data.production,
         });
@@ -42,7 +44,7 @@ function UpdateMovieInfo(props) {
     const data = {
       title: movie.title,
       director: movie.director,
-      description: movie.description,
+      synopsis: movie.synopsis,
       release_date: movie.release_date,
       production: movie.production,
     };
@@ -107,13 +109,13 @@ function UpdateMovieInfo(props) {
             <br />
 
             <div className='form-group'>
-              <label htmlFor='description'>Description</label>
+              <label htmlFor='synopsis'>Synopsis</label>
               <input
                 type='text'
                 placeholder='Movie plot summary'
-                name='description'
+                name='synopsis'
                 className='form-control'
-                value={movie.description}
+                value={movie.synopsis}
                 onChange={onChange}
               />
             </div>
@@ -126,7 +128,7 @@ function UpdateMovieInfo(props) {
                 name='release_date'
                 placeholder="yyyy-mm-dd"
                 className='form-control'
-                value={movie.release_date}
+                value={DateTime.fromISO(movie.release_date).toFormat('yyyy-LL-dd')}
                 onChange={onChange}
               />
             </div>
