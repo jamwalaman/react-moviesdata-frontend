@@ -6,13 +6,11 @@ const MovieCard = (props) => {
 
   return (
     <div className='card-container'>
-      <div className='desc'>
         <h2>
           <Link to={`/show-movie/${movie._id}`}>{movie.title}</Link>
         </h2>
         <h3>{movie.director}</h3>
-        <p>{movie.description}</p>
-      </div>
+        <p>{movie.synopsis}</p>
     </div>
   );
 };

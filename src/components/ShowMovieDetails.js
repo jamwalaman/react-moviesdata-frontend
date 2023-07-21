@@ -3,6 +3,8 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
+const { DateTime } = require("luxon"); //for date handling
+
 function ShowMovieDetails(props) {
   const [movie, setMovie] = useState({});
 
@@ -31,8 +33,6 @@ function ShowMovieDetails(props) {
       });
   };
 
-  const moviedate = new Date(movie.release_date);
-
   const MovieItem = (
     <div>
       <table className='table table-hover table-dark'>
@@ -49,13 +49,13 @@ function ShowMovieDetails(props) {
           </tr>
           <tr>
             <th scope='row'>3</th>
-            <td>Description</td>
-            <td>{movie.description}</td>
+            <td>Synopsis</td>
+            <td>{movie.synopsis}</td>
           </tr>
           <tr>
             <th scope='row'>4</th>
             <td>Release Date</td>
-            <td>{moviedate.getFullYear()}/{moviedate.getMonth()+1}/{moviedate.getDate()}</td>
+            <td>{DateTime.fromISO(movie.release_date).toFormat('yyyy LLL dd')}</td>
           </tr>
           <tr>
             <th scope='row'>5</th>

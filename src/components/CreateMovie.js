@@ -10,7 +10,7 @@ const CreateMovie = (props) => {
   const [movie, setMovie] = useState({
     title: '',
     director: '',
-    description: '',
+    synopsis: '',
     release_date: '',
     production: '',
   });
@@ -28,7 +28,7 @@ const CreateMovie = (props) => {
         setMovie({
           title: '',
           director: '',
-          description: '',
+          synopsis: '',
           release_date: '',
           production: '',
         });
@@ -83,9 +83,9 @@ const CreateMovie = (props) => {
                 <input
                   type='text'
                   placeholder='About the movie'
-                  name='description'
+                  name='synopsis'
                   className='form-control'
-                  value={movie.description}
+                  value={movie.synopsis}
                   onChange={onChange}
                 />
               </div>

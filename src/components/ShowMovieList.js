@@ -19,10 +19,7 @@ function ShowMovieList() {
       });
   }, []);
 
-  const movieList =
-    movies.length === 0
-      ? 'there is no movie record!'
-      : movies.map((movie, k) => <MovieCard movie={movie} key={k} />);
+  const movieList = movies.length === 0 ? 'there is no movie record!' : movies.map((movie, k) => <MovieCard movie={movie} key={k} />);
 
   return (
     <div className='ShowMovieList'>
