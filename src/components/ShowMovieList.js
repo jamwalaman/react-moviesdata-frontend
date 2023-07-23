@@ -28,10 +28,11 @@ function ShowMovieList() {
         <title>Home | {window.$sitename}</title>
       </Helmet>
       </HelmetProvider>
+      <h3>{window.$sitename}</h3>
+      <Link to='/create-movie' className='btn'>Add movie</Link>
       <div className='container'>
-        <div className='row'>
-          <Link to='/create-movie' className='btn'>Add movie</Link>
-          <div className='list'>{movieList}</div>
+        <div className='row row-cols-1 row-cols-md-3 g-4'>
+            {movieList}
         </div>
       </div>
 

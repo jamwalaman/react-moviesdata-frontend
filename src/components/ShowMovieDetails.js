@@ -55,7 +55,7 @@ function ShowMovieDetails(props) {
           <tr>
             <th scope='row'>4</th>
             <td>Release Date</td>
-            <td>{DateTime.fromISO(movie.release_date).toFormat('yyyy LLL dd')}</td>
+            <td>{DateTime.fromISO(movie.release_date).toFormat('dd MMMM yyyy')}</td>
           </tr>
           <tr>
             <th scope='row'>5</th>
