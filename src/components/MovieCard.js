@@ -11,7 +11,7 @@ const MovieCard = (props) => {
           <h2 className='card-title'>
               <Link to={`/show-movie/${movie._id}`}>{movie.title}</Link>
             </h2>
-            <h3>{movie.director}</h3>
+            <h4>{movie.director}</h4>
             <p className='card-text'>{movie.synopsis}</p>
         </div>
       </div>

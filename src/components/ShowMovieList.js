@@ -28,8 +28,11 @@ function ShowMovieList() {
         <title>Home | {window.$sitename}</title>
       </Helmet>
       </HelmetProvider>
-      <h3>{window.$sitename}</h3>
-      <Link to='/create-movie' className='btn'>Add movie</Link>
+      <div className='container text-center mb-4'>
+        <div className='mt-4'><h1>{window.$sitename}</h1></div>
+        <p>MERN Stack app</p>
+        <Link to='/create-movie' className='btn btn-outline-primary'> + Add movie</Link>
+      </div>
       <div className='container'>
         <div className='row row-cols-1 row-cols-md-3 g-4'>
             {movieList}

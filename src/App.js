@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import "@fontsource/inter";
 import './main.scss';
 
 import CreateMovie from './components/CreateMovie';
