@@ -9,6 +9,15 @@ a {
     color: #cc99ff;
 }
 
+.btn-outline-primary:hover, :not(.btn-check) + .btn-outline-primary:active, .btn:first-child:active {
+    background-color: #cc99ff;
+    border: 1px solid #cc99ff;
+}
+.btn-outline-primary {
+    border: 1px solid #cc99ff;
+    color: #cc99ff;
+}
+
 .ShowMovieList .card {
     border-width: 0;
 }

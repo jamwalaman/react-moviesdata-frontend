@@ -33,40 +33,6 @@ function ShowMovieDetails(props) {
       });
   };
 
-  const MovieItem = (
-    <div>
-      <table className='table table-hover table-dark'>
-        <tbody>
-          <tr>
-            <th scope='row'>1</th>
-            <td>Movie Title</td>
-            <td>{movie.title}</td>
-          </tr>
-          <tr>
-            <th scope='row'>2</th>
-            <td>Director</td>
-            <td>{movie.director}</td>
-          </tr>
-          <tr>
-            <th scope='row'>3</th>
-            <td>Synopsis</td>
-            <td>{movie.synopsis}</td>
-          </tr>
-          <tr>
-            <th scope='row'>4</th>
-            <td>Release Date</td>
-            <td>{DateTime.fromISO(movie.release_date).toFormat('dd MMMM yyyy')}</td>
-          </tr>
-          <tr>
-            <th scope='row'>5</th>
-            <td>Production</td>
-            <td>{movie.production}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  );
-
   return (
     <div className='ShowMovieDetails'>
       <HelmetProvider>
@@ -76,38 +42,35 @@ function ShowMovieDetails(props) {
       </HelmetProvider>
       <div className='container'>
         <div className='row'>
-          <div className='col-md-10 m-auto'>
-            <br /> <br />
-            <Link to='/' className='btn btn-outline-warning float-left'>
-              Show Movie List
-            </Link>
+          
+          <div className='col-md-8 m-auto mt-4'>
+            <Link to='/' className='btn btn-outline-primary'>Show Movie List</Link>
           </div>
-          <br />
           <div className='col-md-8 m-auto'>
             <h1 className='display-4 text-center'>Movie's Record</h1>
-            <p className='lead text-center'>View Movie's Info</p>
-            <hr /> <br />
+            <p className='lead text-center'>{movie.title} | Directed by {movie.director}</p>
+            <hr />
           </div>
-          <div className='col-md-10 m-auto'>{MovieItem}</div>
-          <div className='col-md-6 m-auto'>
-            <button
+          <div className='col-md-8 m-auto'>
+            <p><strong>Synopsis:</strong> {movie.synopsis}</p>
+            <p><strong>Release date:</strong> {DateTime.fromISO(movie.release_date).toFormat('dd MMMM yyyy')}</p>
+            <p><strong>Production:</strong> {movie.production}</p>
+            <div className='d-grid gap-2 d-md-flex'>
+              <button
               type='button'
-              className='btn btn-outline-danger btn-lg btn-block'
+              className='btn btn-outline-danger'
               onClick={() => {
                 onDeleteClick(movie._id);
               }}
             >
               Delete Movie
             </button>
+              <Link to={`/edit-movie/${movie._id}`} className='btn btn-outline-secondary'>
+                Edit Movie
+              </Link>
+            </div>
           </div>
-          <div className='col-md-6 m-auto'>
-            <Link
-              to={`/edit-movie/${movie._id}`}
-              className='btn btn-outline-info btn-lg btn-block'
-            >
-              Edit Movie
-            </Link>
-          </div>
+
         </div>
       </div>
     </div>
