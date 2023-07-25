@@ -47,7 +47,7 @@ const CreateMovie = (props) => {
         <div className='row'>
           <div className='col-md-8 m-auto'>
             <br />
-            <Link to='/' className='btn btn-outline-warning float-left'>
+            <Link to='/' className='btn btn-outline-warning'>
               Show Movie List
             </Link>
           </div>
@@ -62,6 +62,7 @@ const CreateMovie = (props) => {
                   type='text'
                   placeholder='Title of the Movie'
                   name='title'
+                  id='title'
                   className='form-control'
                   value={movie.title}
                   onChange={onChange}
@@ -75,6 +76,7 @@ const CreateMovie = (props) => {
                   type='text'
                   placeholder='Director'
                   name='director'
+                  id='director'
                   className='form-control'
                   value={movie.director}
                   onChange={onChange}
@@ -88,6 +90,7 @@ const CreateMovie = (props) => {
                   rows='3'
                   placeholder='About the movie'
                   name='synopsis'
+                  id='synopsis'
                   className='form-control'
                   value={movie.synopsis}
                   onChange={onChange}>
@@ -101,6 +104,7 @@ const CreateMovie = (props) => {
                   type='date'
                   placeholder='release_date'
                   name='release_date'
+                  id='release_date'
                   className='form-control'
                   value={movie.release_date}
                   onChange={onChange}
@@ -114,6 +118,7 @@ const CreateMovie = (props) => {
                   type='text'
                   placeholder='Name of movie production'
                   name='production'
+                  id='production'
                   className='form-control'
                   value={movie.production}
                   onChange={onChange}

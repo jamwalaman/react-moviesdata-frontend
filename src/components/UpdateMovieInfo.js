@@ -86,6 +86,7 @@ function UpdateMovieInfo(props) {
                 type='text'
                 placeholder='Title of the Movie'
                 name='title'
+                id='title'
                 className='form-control'
                 value={movie.title}
                 onChange={onChange}
@@ -99,6 +100,7 @@ function UpdateMovieInfo(props) {
                 type='text'
                 placeholder='Director'
                 name='director'
+                id='director'
                 className='form-control'
                 value={movie.director}
                 onChange={onChange}
@@ -112,6 +114,7 @@ function UpdateMovieInfo(props) {
                 rows='3'
                 placeholder='Movie plot summary'
                 name='synopsis'
+                id='synopsis'
                 className='form-control'
                 value={movie.synopsis}
                 onChange={onChange}>
@@ -124,6 +127,7 @@ function UpdateMovieInfo(props) {
               <input
                 type='date'
                 name='release_date'
+                id='release_date'
                 placeholder="yyyy-mm-dd"
                 className='form-control'
                 value={DateTime.fromISO(movie.release_date).toFormat('yyyy-LL-dd')}
@@ -138,6 +142,7 @@ function UpdateMovieInfo(props) {
                 type='text'
                 placeholder='Production'
                 name='production'
+                id='production'
                 className='form-control'
                 value={movie.production}
                 onChange={onChange}
