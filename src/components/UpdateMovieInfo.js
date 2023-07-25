@@ -67,12 +67,10 @@ function UpdateMovieInfo(props) {
       </Helmet>
       </HelmetProvider>
       <div className='container'>
+
         <div className='row'>
-          <div className='col-md-8 m-auto'>
-            <br />
-            <Link to='/' className='btn btn-outline-warning float-left'>
-              Show Movie List
-            </Link>
+          <div className='col-md-8 m-auto mt-4'>
+            <Link to='/' className='btn btn-outline-primary'>Show Movie List</Link>
           </div>
           <div className='col-md-8 m-auto'>
             <h1 className='display-4 text-center'>Edit Movie</h1>
@@ -110,14 +108,14 @@ function UpdateMovieInfo(props) {
 
             <div className='form-group'>
               <label htmlFor='synopsis'>Synopsis</label>
-              <input
-                type='text'
+              <textarea 
+                rows='3'
                 placeholder='Movie plot summary'
                 name='synopsis'
                 className='form-control'
                 value={movie.synopsis}
-                onChange={onChange}
-              />
+                onChange={onChange}>
+              </textarea>
             </div>
             <br />
 
@@ -147,14 +145,13 @@ function UpdateMovieInfo(props) {
             </div>
             <br />
 
-            <button
-              type='submit'
-              className='btn btn-outline-info btn-lg btn-block'
-            >
-              Update Movie
-            </button>
+            <div className='d-grid gap-2 d-md-flex'>
+              <button type='submit' className='btn btn-outline-info'>Update Movie</button>
+              <Link to={`/show-movie/${id}`} className='btn btn-outline-secondary'>Go back</Link>
+            </div>
           </form>
         </div>
+
       </div>
     </div>
   );

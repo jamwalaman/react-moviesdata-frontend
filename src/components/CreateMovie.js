@@ -57,6 +57,7 @@ const CreateMovie = (props) => {
 
             <form noValidate onSubmit={onSubmit}>
               <div className='form-group'>
+                <label htmlFor='title'>Title</label>
                 <input
                   type='text'
                   placeholder='Title of the Movie'
@@ -69,6 +70,7 @@ const CreateMovie = (props) => {
               <br />
 
               <div className='form-group'>
+                <label htmlFor='director'>Director</label>
                 <input
                   type='text'
                   placeholder='Director'
@@ -78,19 +80,23 @@ const CreateMovie = (props) => {
                   onChange={onChange}
                 />
               </div>
+              <br />
 
               <div className='form-group'>
-                <input
-                  type='text'
+                <label htmlFor='synopsis'>Synopsis</label>
+                <textarea
+                  rows='3'
                   placeholder='About the movie'
                   name='synopsis'
                   className='form-control'
                   value={movie.synopsis}
-                  onChange={onChange}
-                />
+                  onChange={onChange}>
+                </textarea>
               </div>
+              <br />
 
               <div className='form-group'>
+                <label htmlFor='release_date'>Release Date</label>
                 <input
                   type='date'
                   placeholder='release_date'
@@ -100,7 +106,10 @@ const CreateMovie = (props) => {
                   onChange={onChange}
                 />
               </div>
+              <br />
+
               <div className='form-group'>
+                <label htmlFor='production'>Production</label>
                 <input
                   type='text'
                   placeholder='Name of movie production'
